@@ -3,7 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap';
 import '../css/style.css';
+import './createSection.js';
 import {createEl, createPa} from './createEl.js'
+import {createSection} from './createSection.js';
+export {createEl,createPa};
 console.log('App is running');
 
 
@@ -24,3 +27,5 @@ function defaultHome(){
 
 }
 defaultHome();
+
+createSection();
