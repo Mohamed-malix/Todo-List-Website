@@ -5,8 +5,9 @@ import 'bootstrap';
 import '../css/style.css';
 import './createSection.js';
 import {createEl, createPa} from './createEl.js'
-import {createSection} from './createSection.js';
-export {createEl,createPa};
+import {createSectioneDefault,btnAdd, content} from './createSection.js';
+import { addTask} from './addTask.js';
+export {createEl,createPa, addTask, content};
 console.log('App is running');
 
 
@@ -27,4 +28,7 @@ function defaultHome(){
 
 }
 defaultHome();
-createSection();
+createSectioneDefault();
+btnAdd.addEventListener('click', e=> {
+    addTask('reading');
+})

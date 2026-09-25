@@ -1,13 +1,17 @@
 
-import {createEl} from './createEl.js';
+import {createEl, createPa} from './createEl.js';
 
 
 let sidebar =document.querySelector('.sidebar');
-let content= document.querySelector('.content');
+export let content= document.querySelector('.content');
+export let btnAdd;
 
-export function createSection(){
+
+export function createSectioneDefault(){
     content.innerHTML='';
 
-    let btnAdd = createEl('button','btnAdd', 'add a task', content);
+    btnAdd = createEl('button','button', 'add task', content);
+    let sectionText= createPa('div', 'sectionText', content);
+   let header4= createEl('h4', 'header4', 'Click on "add task" to start building your todo list', sectionText);
 
 }

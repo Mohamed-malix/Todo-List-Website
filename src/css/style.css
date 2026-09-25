@@ -39,6 +39,8 @@
 
 .content{
     grid-column: 2/7;
+    color:#fff;
+    flex-direction:column;
 }
 
 
@@ -72,3 +74,12 @@ h4{
     font-size:1.8;
 }
 
+.button{
+    border:1px solid #fff;
+    padding:8px 18px;
+    border-radius:8px;
+    color:#fff;
+    background:transparent;
+
+    margin-bottom:10px;
+}
