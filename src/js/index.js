@@ -18,14 +18,13 @@ function defaultHome(){
     createEl('h2', 'welcomeH2', 'Welcome to Blue-Sea Todo-list website!',defaultContainer);
     let defaultText= createPa('div','defaultContent',defaultContainer);
     defaultText.innerHTML=`
-    <h4 class='mt-4 mb-2'>How to use Blue-Sea todolist ? it simple</h4>
+    <h4 class='mt-5 mb-2'>How to use Blue-Sea todolist ? it's simple</h4>
     <ol>
-        <li>Click on the section that you want from the sidebar.</li>
-        <li>Add a task you want to finish</li>
+        <li class='text'>Click on the section that you want from the sidebar.</li>
+        <li class='text'>Add a task you want to finish</li>
     </ol>
 `;
 
 }
 defaultHome();
-
 createSection();
