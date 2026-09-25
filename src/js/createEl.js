@@ -16,4 +16,6 @@ export function createEl(element, classNa,text, parent){
     elementNa.textContent=`${text}`;
     parent.appendChild(elementNa);
     console.log(elementNa)
+
+    return elementNa;
 }

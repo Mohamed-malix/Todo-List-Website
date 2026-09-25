@@ -31,4 +31,5 @@ defaultHome();
 createSectioneDefault();
 btnAdd.addEventListener('click', e=> {
     addTask('reading');
+    addTask('writing');
 })
