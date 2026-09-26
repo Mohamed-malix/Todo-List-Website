@@ -66,12 +66,16 @@ li{
     
 }
 
+.tasks{
+    display:flex;
+    align-items: center;
+    gap:3em;
+}
 
-/* .group{
-    display: flex;
-    align-self:auto
-} */
-
+.check{
+    width:15px;
+    height:15px;
+}
 
 
 

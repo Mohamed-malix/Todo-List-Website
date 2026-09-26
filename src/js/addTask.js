@@ -1,20 +1,21 @@
 
-import {createBe, createEl, content} from './index.js';
+import {createBe, createEl, content, createPa} from './index.js';
 
 
 
 
 export function addGroup(){
     let tasksGroup= createBe('ul', 'tasksGroup',content, document.querySelector('.button'));
-
+    
     return tasksGroup;
 
 }
 
 
 export function addTask(task, group){
-    
-   createEl('li', 'text',task, group);
+   let tasks= createPa('div','tasks',group);
+    createPa('input','check',tasks);
+   createEl('li', 'text',task, tasks);
     
 }
 
