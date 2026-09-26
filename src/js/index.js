@@ -4,10 +4,10 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap';
 import '../css/style.css';
 import './createSection.js';
-import {createEl, createPa} from './createEl.js'
+import {createEl, createPa, createBe} from './createEl.js'
 import {createSectioneDefault, content} from './createSection.js';
 import { addTask, addGroup} from './addTask.js';
-export {createEl,createPa, addTask, content};
+export {createEl,createPa, addTask,createBe, content};
 console.log('App is running');
 
 

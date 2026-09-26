@@ -1,11 +1,11 @@
 
-import {createPa, createEl, content} from './index.js';
+import {createBe, createEl, content} from './index.js';
 
 
 
 
 export function addGroup(){
-    let tasksGroup= createPa('ul', 'tasksGroup', content);
+    let tasksGroup= createBe('ul', 'tasksGroup',content, document.querySelector('.button'));
 
     return tasksGroup;
 
