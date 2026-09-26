@@ -2,9 +2,19 @@
 import {createPa, createEl, content} from './index.js';
 
 
-export function addTask(task){
-    
+
+
+export function addGroup(){
     let tasksGroup= createPa('ul', 'tasksGroup', content);
-    createEl('li', 'text',task, tasksGroup);
+
+    return tasksGroup;
+
+}
+
+
+export function addTask(task, group){
+    
+   createEl('li', 'text',task, group);
     
 }
+
