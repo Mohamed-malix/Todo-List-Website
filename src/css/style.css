@@ -69,12 +69,12 @@ li{
 .tasks{
     display:flex;
     align-items: center;
-    gap:3em;
+    gap:1em;
 }
 
 .check{
-    width:15px;
-    height:15px;
+    width:1.1rem;
+    height:1.1rem;
 }
 
 

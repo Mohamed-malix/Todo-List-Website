@@ -14,7 +14,9 @@ export function addGroup(){
 
 export function addTask(task, group){
    let tasks= createPa('div','tasks',group);
-    createPa('input','check',tasks);
+   let checkbox= createPa('input','check',tasks);
+    checkbox.setAttribute('type', 'checkbox');
+
    createEl('li', 'text',task, tasks);
     
 }
