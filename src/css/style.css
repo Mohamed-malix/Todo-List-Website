@@ -124,27 +124,40 @@ h4{
 /* the modal */
 
 .modal-background{
-    background-color:rgba(0,0,0,0.3);
+    background-color:rgba(0,0,0,0.4);
     display:flex;
     justify-content:center;
     align-items:center;
 
-    position:relative;
+    position:absolute;
     top:0;
     left:0;
     right:0;
     bottom:0;
-    z-index:-1;
+    z-index:2;
+    
 }
 
 .modal-container{
-    background-color:#1805c3;
+    background-color:#4c477f;
     padding:20px 30px;
     width:40%;
-
+    border-radius:30px;
 
     position:absolute;
     top:50%;
-    left:50%;
+    left:58%;
+    z-index:3;
     transform:translate(-50%,-50%);
+}
+
+label{
+    display:block;
+}
+
+
+.closeBtn{
+    border:none;
+    background-color:transparent;
+    color:#fff;
 }
