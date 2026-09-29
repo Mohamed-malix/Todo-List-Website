@@ -18,6 +18,8 @@ export function addTask(task, group){
     checkbox.setAttribute('type', 'checkbox');
 
    createEl('li', 'text',task, tasks);
+   createEl('span','text','P/ 8',tasks)
+   createPa('hr', 'hr', group);
     
 }
 

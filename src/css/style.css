@@ -12,6 +12,8 @@ li{
 
 
 
+
+
 .home-container{
     background-color:#222;
     color:#fff;
@@ -66,16 +68,31 @@ li{
     
 }
 
+
+
+
+/* adding tasks */
+
 .tasks{
     display:flex;
     align-items: center;
     gap:1em;
+
+    padding:5px 12px;
+    border-radius:12px;
+
 }
+
+.tasks span.text{
+    color:goldenrod;
+}
+
 
 .check{
     width:1.1rem;
     height:1.1rem;
 }
+
 
 
 
@@ -117,6 +134,9 @@ h4{
 
     margin-top:10px;
 }
+
+
+
 
 
 
@@ -184,3 +204,5 @@ label{
     border-radius:12px;
     border:none;
 }
+
+
