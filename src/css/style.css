@@ -141,7 +141,7 @@ h4{
 .modal-container{
     background-color:#4c477f;
     padding:20px 30px;
-    width:40%;
+    width:35%;
     border-radius:30px;
 
     position:absolute;
@@ -160,4 +160,27 @@ label{
     border:none;
     background-color:transparent;
     color:#fff;
+}
+
+.modal-container input,
+.modal-container textarea{
+    width:90%;
+    margin-left:auto;
+    border:none;
+    padding:8px;
+
+    margin-bottom:4px;
+    border-radius:12px;
+    background-color:#ffffff;
+}
+
+.form-group{
+    margin-bottom:1rem;
+}
+
+
+#select{
+    padding:5px 9px;
+    border-radius:12px;
+    border:none;
 }
