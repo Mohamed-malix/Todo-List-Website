@@ -22,15 +22,14 @@ let modalBack= document.querySelector('.modal-background');
 let modalContainer= document.querySelector('.modal-container');
 let title= document.getElementById('title');
 let textArea= document.getElementById('description');
+let selected= document.querySelector('#select');
 
 
 
-let group= addGroup();
 addTaskBtn.addEventListener('click', ()=> {
 
     modalBack.classList.remove('d-none');
     modalContainer.classList.remove('d-none');
-    addTask('reading', group);
 })
 
 
@@ -41,10 +40,28 @@ closeBtn.addEventListener('click', ()=> {
 
 
 saveBtn.addEventListener('click', () => {
-    console.log(title.value);
-    console.log(textArea.value);
-
-    let selected= document.querySelector('#select');
-    console.log(selected.value);
     
+    let group=addGroup();
+    let date= createDate();
+
+    addTask(title.value, group,selected.value,date);
+    modalBack.classList.add('d-none');
+    modalContainer.classList.add('d-none');
+
+
+    clearInput();
 })
+
+
+function createDate(){
+    const today= new Date();
+    const date= format(today, 'MM-dd');
+
+    return date;
+}
+
+function clearInput(){
+    title.value='';
+    selected.value='';
+    textArea.value='';
+}

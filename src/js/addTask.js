@@ -12,13 +12,14 @@ export function addGroup(){
 }
 
 
-export function addTask(task, group){
+export function addTask(task, group,priority,date){
    let tasks= createPa('div','tasks',group);
    let checkbox= createPa('input','check',tasks);
     checkbox.setAttribute('type', 'checkbox');
 
    createEl('li', 'text',task, tasks);
-   createEl('span','text','P/ 8',tasks)
+   createEl('span','text',priority,tasks)
+   createEl('span','date', date, tasks )
    createPa('hr', 'hr', group);
     
 }
