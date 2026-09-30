@@ -15,7 +15,8 @@ console.log('App is running');
 
 
 defaultHome();
-let addTaskBtn= createSectioneDefault();
+
+let createBtn =document.querySelector('.createBtn');
 let closeBtn= document.querySelector('.closeBtn');
 let saveBtn= document.querySelector('.saveBtn');
 let modalBack= document.querySelector('.modal-background');
@@ -26,7 +27,13 @@ let selected= document.querySelector('#select');
 
 
 
-addTaskBtn.addEventListener('click', ()=> {
+createBtn.addEventListener('click', () => {
+    const [addTaskBtn, sections] = createSectioneDefault();
+
+})
+
+
+createBtn.addTaskBtn.addEventListener('click', ()=> {
 
     modalBack.classList.remove('d-none');
     modalContainer.classList.remove('d-none');

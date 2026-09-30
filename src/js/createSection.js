@@ -26,9 +26,9 @@ export function defaultHome(){
 export function createSectioneDefault(){
     content.innerHTML='';
 
+   let sectoins=[];
    let header4= createEl('h4', 'header4', 'Today:', content);
    let addTaskBtn = createEl('button','button', 'add task', content);
 
-   return addTaskBtn;
-
+   return [addTaskBtn,sectoins];
 }
