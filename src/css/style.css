@@ -135,7 +135,12 @@ h4{
     margin-top:10px;
 }
 
-
+.btnStyle{
+    padding:5px 17px;
+    border-radius:28px;
+    border:none;
+    font-size:1.2rem;
+}
 
 
 
