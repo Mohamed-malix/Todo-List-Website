@@ -147,7 +147,18 @@ h4{
     color:#ccc;
 }
 
+.create-Btn {
+    width:100%;
+    margin:auto;
+}
 
+.line-div{
+    height:1px;
+    width:100%;
+    margin-top: 1px;
+    margin-bottom: 9px;
+    background-color: #ccc;
+}
 
 
 

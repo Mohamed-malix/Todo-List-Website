@@ -1,13 +1,21 @@
 
-import {createEl, createPa} from './createEl.js';
+import {
+    createEl,
+    createPa
+} from './createEl.js';
+export {
+    content,
+    defaultHome,
+    createSectioneDefault,
+}
+
 
 
 let sidebar =document.querySelector('.sidebar');
-export let content= document.querySelector('.content');
+let content= document.querySelector('.content');
 
 
-
-export function defaultHome(){
+function defaultHome(){
 
     let contentDiv= document.querySelector('.content');
     let defaultContainer= createPa('div','defaultContainer',contentDiv);
@@ -20,15 +28,17 @@ export function defaultHome(){
         <li class='text'>Add a task you want to finish</li>
     </ol>
 `;
-
 }
 
-export function createSectioneDefault(){
+
+
+function createSectioneDefault(){
     content.innerHTML='';
 
-   let sectoins=[];
    let header4= createEl('h4', 'header4', 'Today:', content);
    let addTaskBtn = createEl('button','button', 'add task', content);
 
-   return [addTaskBtn,sectoins];
+    return addTaskBtn;
 }
+
+
