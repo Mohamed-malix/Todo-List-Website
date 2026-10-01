@@ -68,6 +68,9 @@ li{
     
 }
 
+.section i{
+    margin-right:10px;
+}
 
 
 
@@ -152,13 +155,14 @@ h4{
     margin:auto;
 }
 
-.line-div{
+/* .line-div{
     height:1px;
     width:100%;
     margin-top: 1px;
     margin-bottom: 9px;
     background-color: #ccc;
 }
+*/
 
 
 
