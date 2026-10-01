@@ -33,7 +33,7 @@ console.log('App is running');
 
 
 defaultHome();
-const createBtn =document.querySelector('.createBtn');
+const sectoinClick =document.querySelector('.sectoinClick');
 const closeBtn= document.querySelector('.closeBtn');
 const saveBtn= document.querySelector('.saveBtn');
 let modalBack= document.querySelector('.modal-background');
@@ -45,7 +45,7 @@ let selected= document.querySelector('#select');
 
 
 
-createBtn.addEventListener('click', () => {
+sectoinClick.addEventListener('click', () => {
 
    const addTaskBtn= createSectioneDefault();
     const sections=[];

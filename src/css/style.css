@@ -72,7 +72,22 @@ li{
     margin-right:10px;
 }
 
+.sectoinClick{
+    border: none;
+    text-align: start;
+    background: transparent;
 
+    color: #fff;
+    font-size:1.2rem;
+    font-weight: 400;
+    padding-block:5px;
+    padding-left: 1.1rem;
+}
+
+.sectoinClick:hover{
+    cursor: pointer;
+    background-color: #333;
+}
 
 /* adding tasks */
 
