@@ -30,7 +30,7 @@ export {
 console.log('App is running');
 
 defaultHome();
-const sectoinClick =document.querySelector('.sectoinClick');
+const sectoinClick =document.querySelectorAll('.sectoinClick');
 const closeBtn= document.querySelector('.closeBtn');
 const saveBtn= document.querySelector('.saveBtn');
 let modalBack= document.querySelector('.modal-background');
@@ -39,17 +39,18 @@ let title= document.getElementById('title');
 let textArea= document.getElementById('description');
 let selected= document.querySelector('#select');
 
-sectoinClick.addEventListener('click', () => {
-
+Array.from(sectoinClick).forEach((item) => {
+    item.addEventListener('click', () => {
    const addTaskBtn= createSectioneDefault();
     const sections=[];
-
+    
     addTaskBtn.addEventListener('click', ()=> {
-
     modalBack.classList.remove('d-none');
     modalContainer.classList.remove('d-none');
-    })
-})
+    });
+
+  });
+});
 
 closeBtn.addEventListener('click', ()=> {
     modalBack.classList.add('d-none');

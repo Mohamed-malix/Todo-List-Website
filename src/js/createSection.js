@@ -30,7 +30,13 @@ function defaultHome() {
 function createSectioneDefault() {
     content.innerHTML='';
    let header4= createEl('h4', 'header4', 'Today:', content);
-   let addTaskBtn = createEl('button', 'button', 'add task', content);
+   let addTaskBtn = createEl(
+    'button',
+    'addTaskBtn',
+    'add task',
+    content,
+ );
+    addTaskBtn.classList.add('button');
 
     return addTaskBtn;
 }
