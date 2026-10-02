@@ -59,7 +59,7 @@ closeBtn.addEventListener('click', ()=> {
 saveBtn.addEventListener('click', () => {
     let group=addGroup();
     let date= createDate();
-    addTask(title.value, group,selected.value,date);
+    addTask(title.value, group, selected.value, date);
     modalBack.classList.add('d-none');
     modalContainer.classList.add('d-none');
 
