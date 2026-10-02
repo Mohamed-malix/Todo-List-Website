@@ -3,20 +3,17 @@ import {
     createEl,
     createPa
 } from './createEl.js';
+
 export {
     content,
     defaultHome,
     createSectioneDefault,
 }
 
-
-
 let sidebar =document.querySelector('.sidebar');
 let content= document.querySelector('.content');
 
-
-function defaultHome(){
-
+function defaultHome() {
     let contentDiv= document.querySelector('.content');
     let defaultContainer= createPa('div','defaultContainer',contentDiv);
     createEl('h2', 'welcomeH2', 'Welcome to Blue-Sea Todo-list website!',defaultContainer);
@@ -27,14 +24,11 @@ function defaultHome(){
         <li class='text'>Click on the section that you want from the sidebar.</li>
         <li class='text'>Add a task you want to finish</li>
     </ol>
-`;
+    `;
 }
 
-
-
-function createSectioneDefault(){
+function createSectioneDefault() {
     content.innerHTML='';
-
    let header4= createEl('h4', 'header4', 'Today:', content);
    let addTaskBtn = createEl('button','button', 'add task', content);
 

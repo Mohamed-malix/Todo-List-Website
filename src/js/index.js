@@ -29,9 +29,6 @@ export {
 };
 console.log('App is running');
 
-
-
-
 defaultHome();
 const sectoinClick =document.querySelector('.sectoinClick');
 const closeBtn= document.querySelector('.closeBtn');
@@ -41,9 +38,6 @@ let modalContainer= document.querySelector('.modal-container');
 let title= document.getElementById('title');
 let textArea= document.getElementById('description');
 let selected= document.querySelector('#select');
-
-
-
 
 sectoinClick.addEventListener('click', () => {
 
@@ -57,36 +51,29 @@ sectoinClick.addEventListener('click', () => {
     })
 })
 
-
-
 closeBtn.addEventListener('click', ()=> {
     modalBack.classList.add('d-none');
     modalContainer.classList.add('d-none');
 })
 
-
 saveBtn.addEventListener('click', () => {
-    
     let group=addGroup();
     let date= createDate();
-
     addTask(title.value, group,selected.value,date);
     modalBack.classList.add('d-none');
     modalContainer.classList.add('d-none');
 
-
     clearInput();
 })
 
-
-function createDate(){
+function createDate() {
     const today= new Date();
     const date= format(today, 'MM-dd');
 
     return date;
 }
 
-function clearInput(){
+function clearInput() {
     title.value='';
     selected.value='';
     textArea.value='';
