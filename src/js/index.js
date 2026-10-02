@@ -1,93 +1,77 @@
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap";
+import "../css/style.css";
+import "./createDefault.js";
+import { format } from "date-fns";
+import { createEl, createPa, createBe } from "./createEl.js";
+import {
+  createSectioneDefault,
+  content,
+  defaultHome,
+} from "./createDefault.js";
+import { addTask, addGroup } from "./addTask.js";
+import createSection from "./createSection.js";
+export { createEl, createPa, addTask, createBe, format, content };
+console.log("App is running");
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap';
-import '../css/style.css';
-import './createDefault.js';
-import {format} from 'date-fns';
-import {
-    createEl, 
-    createPa,
-    createBe,
-} from './createEl.js'
-import {
-    createSectioneDefault,
-    content, 
-    defaultHome,
-} from './createDefault.js';
-import {
-    addTask,
-    addGroup,
-} from './addTask.js';
-import createSection from './createSection.js';
-export {
-    createEl,
-    createPa,
-    addTask,
-    createBe,
-    format,
-    content,
-};
-console.log('App is running');
+const closeBtn = document.querySelector(".closeBtn");
+const createBtn = document.querySelector(".createBtn");
+const saveBtn = document.querySelector(".saveBtn");
+let modalBack = document.querySelector(".modal-background");
+let modalContainer = document.querySelector(".modal-container");
+let title = document.getElementById("title");
+let textArea = document.getElementById("description");
+let selected = document.querySelector("#select");
+let section = document.querySelector(".section");
 
-const sectoinClick =document.querySelectorAll('.sectoinClick');
-const closeBtn= document.querySelector('.closeBtn');
-const createBtn= document.querySelector('.createBtn');
-const saveBtn= document.querySelector('.saveBtn');
-let modalBack= document.querySelector('.modal-background');
-let modalContainer= document.querySelector('.modal-container');
-let title= document.getElementById('title');
-let textArea= document.getElementById('description');
-let selected= document.querySelector('#select');
+// let sectionBtns= Array.from(sectoinClick);
 
 defaultHome();
-const sections=[];
-let sectionBtns= Array.from(sectoinClick);
-sectionBtns.forEach((item) => {
-
-})
-
-createBtn.addEventListener('click', () => {
-    let section =createSection('work-out');
-    console.log(section);
-})
-
-sectionBtns.forEach((item) => {
-    item.addEventListener('click', () => {
-    const addTaskBtn= createSectioneDefault();
-    
-    addTaskBtn.addEventListener('click', ()=> {
-    modalBack.classList.remove('d-none');
-    modalContainer.classList.remove('d-none');
-    });
-
-  });
+const sections = [];
+createBtn.addEventListener("click", () => {
+  createSection("Work out");
 });
 
-closeBtn.addEventListener('click', ()=> {
-    modalBack.classList.add('d-none');
-    modalContainer.classList.add('d-none');
-})
+section.addEventListener("click", (e) => {
+  if (e.target.classList.contains("sectoinClick")) {
+    const sectoinClick = document.querySelectorAll(".sectoinClick");
+    addEventCall();
+  }
+});
 
-saveBtn.addEventListener('click', () => {
-    let group=addGroup();
-    let date= createDate();
-    addTask(title.value, group, selected.value, date);
-    modalBack.classList.add('d-none');
-    modalContainer.classList.add('d-none');
+function addEventCall(){
+        const addTaskBtn = createSectioneDefault();
+        addTaskBtn.addEventListener("click", () => {
+          modalBack.classList.remove("d-none");
+          modalContainer.classList.remove("d-none");
+        });
+}
 
-    clearInput();
-})
+closeBtn.addEventListener("click", () => {
+  modalBack.classList.add("d-none");
+  modalContainer.classList.add("d-none");
+});
+
+saveBtn.addEventListener("click", () => {
+  let group = addGroup();
+  let date = createDate();
+  addTask(title.value, group, selected.value, date);
+  modalBack.classList.add("d-none");
+  modalContainer.classList.add("d-none");
+
+  clearInput();
+});
 
 function createDate() {
-    const today= new Date();
-    const date= format(today, 'MM-dd');
+  const today = new Date();
+  const date = format(today, "MM-dd");
 
-    return date;
+  return date;
 }
 
 function clearInput() {
-    title.value='';
-    selected.value='';
-    textArea.value='';
+  title.value = "";
+  selected.value = "";
+  textArea.value = "";
 }
