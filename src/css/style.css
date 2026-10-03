@@ -241,3 +241,8 @@ label {
   width:85%; 
   margin:auto;
 }
+
+.secContainer:hover {
+  cursor: pointer;
+  background-color: #333;
+}

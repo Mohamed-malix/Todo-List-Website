@@ -15,9 +15,9 @@ import createSection from "./createSection.js";
 export { createEl, createPa, addTask, createBe, format, content };
 console.log("App is running");
 
-const closeBtn = document.querySelector(".closeBtn");
-const createBtn = document.querySelector(".createBtn");
+const closeBtn = document.querySelectorAll(".closeBtn");
 const saveBtn = document.querySelector(".saveBtn");
+const createBtn = document.querySelector(".createBtn");
 let modalBack = document.querySelector(".modal-background");
 let modalContainer = document.querySelector(".modal-container");
 let title = document.getElementById("title");
@@ -29,7 +29,8 @@ window.addEventListener('load', defaultHome());
 
 const sections = [];
 createBtn.addEventListener("click", () => {
-  createSection("Work out");
+  // createSection("Work out");
+
 });
 
 section.addEventListener("click", (e) => {
@@ -47,10 +48,12 @@ function addEventCall() {
   });
 }
 
-closeBtn.addEventListener("click", () => {
+closeBtn.forEach((item) => {
+  item.addEventListener("click", () => {
   modalBack.classList.add("d-none");
   modalContainer.classList.add("d-none");
-});
+  });
+})
 
 saveBtn.addEventListener("click", () => {
   let group = addGroup();
