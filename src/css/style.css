@@ -153,18 +153,11 @@ h4 {
   margin: auto;
 }
 
-/* .line-div{
-    height:1px;
-    width:100%;
-    margin-top: 1px;
-    margin-bottom: 9px;
-    background-color: #ccc;
-}
-*/
 
 /* the modal */
 
-.modal-background {
+.modal-background,
+.small-modal-bg {
   background-color: rgba(0, 0, 0, 0.4);
   display: flex;
   justify-content: center;
@@ -178,7 +171,8 @@ h4 {
   z-index: 2;
 }
 
-.modal-container {
+.modal-container, 
+.small-modal-container {
   background-color: #333;
   padding: 20px 30px;
   width: 35%;
@@ -195,14 +189,15 @@ label {
   display: block;
 }
 
-.closeBtn {
+.closeBtn,
+.close-sm-modal {
   border: none;
   background-color: transparent;
   color: #fff;
 }
 
-.modal-container input,
-.modal-container textarea {
+ input,
+ textarea {
   width: 90%;
   margin-left: auto;
   border: none;
@@ -210,7 +205,7 @@ label {
 
   margin-bottom: 4px;
   border-radius: 12px;
-  background-color: #ffffff;
+  background-color: rgb(248, 244, 244);
 }
 
 .form-group {

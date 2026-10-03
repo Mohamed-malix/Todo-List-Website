@@ -15,23 +15,36 @@ import createSection from "./createSection.js";
 export { createEl, createPa, addTask, createBe, format, content };
 console.log("App is running");
 
-const closeBtn = document.querySelectorAll(".closeBtn");
+const closeBtn = document.querySelector(".closeBtn");
+const closeSmallBtn = document.querySelector(".close-sm-modal");
 const saveBtn = document.querySelector(".saveBtn");
 const createBtn = document.querySelector(".createBtn");
+const saveSection= document.querySelector(".save-new-section")
 let modalBack = document.querySelector(".modal-background");
 let modalContainer = document.querySelector(".modal-container");
 let title = document.getElementById("title");
 let textArea = document.getElementById("description");
 let selected = document.querySelector("#select");
 let section = document.querySelector(".section");
+let sectionTitle = document.querySelector("#section-title");
+let sectionDescription= document.querySelector("#section-description");
 
 window.addEventListener('load', defaultHome());
 
 const sections = [];
 createBtn.addEventListener("click", () => {
-  // createSection("Work out");
+  document.querySelector('.small-modal-bg').classList.remove("d-none");
+  document.querySelector('.small-modal-container').classList.remove("d-none");
 
 });
+
+saveSection.addEventListener('click', () => {
+  document.querySelector('.small-modal-bg').classList.add("d-none");
+  document.querySelector('.small-modal-container').classList.add("d-none");
+
+  createSection(sectionTitle.value);
+  clearInput();
+})
 
 section.addEventListener("click", (e) => {
   if (e.target.classList.contains("sectoinClick")) {
@@ -48,11 +61,14 @@ function addEventCall() {
   });
 }
 
-closeBtn.forEach((item) => {
-  item.addEventListener("click", () => {
+closeBtn.addEventListener("click", () => {
   modalBack.classList.add("d-none");
   modalContainer.classList.add("d-none");
-  });
+})
+
+closeSmallBtn.addEventListener("click", () => {
+  document.querySelector('.small-modal-bg').classList.add("d-none");
+  document.querySelector('.small-modal-container').classList.add("d-none");
 })
 
 saveBtn.addEventListener("click", () => {
