@@ -25,9 +25,8 @@ let textArea = document.getElementById("description");
 let selected = document.querySelector("#select");
 let section = document.querySelector(".section");
 
-// let sectionBtns= Array.from(sectoinClick);
+window.addEventListener('load', defaultHome());
 
-defaultHome();
 const sections = [];
 createBtn.addEventListener("click", () => {
   createSection("Work out");
@@ -40,12 +39,12 @@ section.addEventListener("click", (e) => {
   }
 });
 
-function addEventCall(){
-        const addTaskBtn = createSectioneDefault();
-        addTaskBtn.addEventListener("click", () => {
-          modalBack.classList.remove("d-none");
-          modalContainer.classList.remove("d-none");
-        });
+function addEventCall() {
+  const addTaskBtn = createSectioneDefault();
+  addTaskBtn.addEventListener("click", () => {
+    modalBack.classList.remove("d-none");
+    modalContainer.classList.remove("d-none");
+  });
 }
 
 closeBtn.addEventListener("click", () => {

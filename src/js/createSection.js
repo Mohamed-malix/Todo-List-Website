@@ -1,8 +1,10 @@
-
 import { createEl, createPa } from "./index.js";
 
-let sectionsContainer= document.querySelector('.section');
+let sectionsContainer = document.querySelector(".section");
 export default function createSection(name) {
-   let newSection= createEl('button', 'sectoinClick', name, sectionsContainer,)
-   newSection.setAttribute('type', 'button');
+  const secContainer=createPa('div','secContainer',sectionsContainer);
+  createPa('span','span-dot',secContainer)
+  const newSection = createEl("button", "sectoinClick", name, secContainer);
+  newSection.setAttribute("type", "button");
+
 }
