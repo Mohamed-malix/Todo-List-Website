@@ -1,4 +1,3 @@
-
 export function createPa(element, classNa, parent) {
   let elementNa = document.createElement(`${element}`);
   elementNa.classList.add(`${classNa}`);

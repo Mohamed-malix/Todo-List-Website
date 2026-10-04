@@ -6,7 +6,6 @@
     <title>Project</title>
   </head>
   <body>
-
     <div class="home-container">
       <div class="sidebar">
         <div class="user">
@@ -15,93 +14,111 @@
         </div>
         <div class="side-nav-content my-3 mb-3">
           <h4 class="mx-3">Sections:</h4>
-          <div class="section d-flex flex-column justify-content-center row-gap-3 mt-3">
-            <button class="sectoinClick" type="button"><i class="fa-solid fa-briefcase"></i> Work</button>
-            <button class="sectoinClick" type="button"><i class="fa-solid fa-book-open"></i> Studying</button>
-            <button class="sectoinClick" type="button"><i class="fa-solid fa-user"></i> Personal</button>
+          <div
+            class="section d-flex flex-column justify-content-center row-gap-3 mt-3"
+          >
+            <button class="sectoinClick" type="button">
+              <i class="fa-solid fa-briefcase"></i> Work
+            </button>
+            <button class="sectoinClick" type="button">
+              <i class="fa-solid fa-book-open"></i> Studying
+            </button>
+            <button class="sectoinClick" type="button">
+              <i class="fa-solid fa-user"></i> Personal
+            </button>
           </div>
           <div class="create-Btn mt-4">
-            <button class="createBtn button" type="button"><i class="fa-solid fa-plus"></i> Create section</button>
+            <button class="createBtn button" type="button">
+              <i class="fa-solid fa-plus"></i> Create section
+            </button>
           </div>
         </div>
       </div>
 
       <div class="small-modal-bg d-none">
         <div class="small-modal-container d-none">
-          <div class="modal-header d-flex 
-          justify-content-between align-items-center mb-3">
-              <h5 class="">Add New Section</h5>
-              <button class="close-sm-modal fs-5"><i class="fa-solid fa-xmark"></i></button>
+          <div
+            class="modal-header d-flex justify-content-between align-items-center mb-3"
+          >
+            <h5 class="">Add New Section</h5>
+            <button class="close-sm-modal fs-5">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
           </div>
 
           <form action="#">
             <div class="form-group">
               <label for="title">Section title:</label>
-              <input type="text" name="title" id="section-title">
+              <input type="text" name="title" id="section-title" />
             </div>
 
             <div class="form-group">
               <label for="desc">Description (optional):</label>
-              <textarea name="desc" id="section-description" 
-              placeholder="What is this section about?..."></textarea>
+              <textarea
+                name="desc"
+                id="section-description"
+                placeholder="What is this section about?..."
+              ></textarea>
             </div>
 
             <div class="save-div d-flex w-100 justify-content-end pe-4 mt-4">
-              <button class="save-new-section btnStyle" type="button">Save</button>
+              <button class="save-new-section btnStyle" type="button">
+                Save
+              </button>
             </div>
           </form>
-        
         </div>
       </div>
 
       <div class="modal-background d-none">
         <div class="modal-container d-none">
-          <div class="modal-header d-flex 
-          justify-content-between align-items-center mb-3">
-              <h5 class="">Add New Task</h5>
-              <button class="closeBtn fs-5"><i class="fa-solid fa-xmark"></i></button>
+          <div
+            class="modal-header d-flex justify-content-between align-items-center mb-3"
+          >
+            <h5 class="">Add New Task</h5>
+            <button class="closeBtn fs-5">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
           </div>
 
           <form action="#">
             <div class="form-group">
               <label for="title">Title</label>
-              <input type="text" name="title" id="title">
+              <input type="text" name="title" id="title" />
             </div>
 
             <div class="middle-group">
-                <div class="form-group">
-                  <label for="select">Priority</label>
-                  <select name="select" id="select">
-                    <option value="Medium" selected>Medium</option>
-                    <option value="Low">Low</option>
-                    <option value="High">High</option>
-                  </select>
-                </div>
-                <!-- <div class="form-group">
+              <div class="form-group">
+                <label for="select">Priority</label>
+                <select name="select" id="select">
+                  <option value="Medium" selected>Medium</option>
+                  <option value="Low">Low</option>
+                  <option value="High">High</option>
+                </select>
+              </div>
+              <!-- <div class="form-group">
                   
                 </div> -->
             </div>
             <div class="form-group">
               <label for="desc">Description</label>
-              <textarea name="desc" id="description" 
-              placeholder="Add details..."></textarea>
+              <textarea
+                name="desc"
+                id="description"
+                placeholder="Add details..."
+              ></textarea>
             </div>
 
             <div class="save-div d-flex w-100 justify-content-end pe-4 mt-4">
               <button class="saveBtn btnStyle" type="button">Save</button>
             </div>
           </form>
-        
         </div>
       </div>
 
       <div class="content-back">
-        <div class="content">
-
-        </div>
+        <div class="content"></div>
       </div>
-
     </div>
-
   </body>
 </html>

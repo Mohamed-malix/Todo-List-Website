@@ -13,38 +13,38 @@ import {
 import { addTask, addGroup } from "./addTask.js";
 import createSection from "./createSection.js";
 export { createEl, createPa, addTask, createBe, format, content };
+
+// eslint-disable-next-line no-console -- I like this test, I will keep it (:
 console.log("App is running");
 
 const closeBtn = document.querySelector(".closeBtn");
 const closeSmallBtn = document.querySelector(".close-sm-modal");
 const saveBtn = document.querySelector(".saveBtn");
 const createBtn = document.querySelector(".createBtn");
-const saveSection= document.querySelector(".save-new-section")
-let modalBack = document.querySelector(".modal-background");
-let modalContainer = document.querySelector(".modal-container");
-let title = document.getElementById("title");
-let textArea = document.getElementById("description");
-let selected = document.querySelector("#select");
-let section = document.querySelector(".section");
-let sectionTitle = document.querySelector("#section-title");
-let sectionDescription= document.querySelector("#section-description");
+const saveSection = document.querySelector(".save-new-section");
+const modalBack = document.querySelector(".modal-background");
+const modalContainer = document.querySelector(".modal-container");
+const title = document.getElementById("title");
+const textArea = document.getElementById("description");
+const selected = document.querySelector("#select");
+const section = document.querySelector(".section");
+const sectionTitle = document.querySelector("#section-title");
 
-window.addEventListener('load', defaultHome());
+window.addEventListener("load", defaultHome());
 
 const sections = [];
 createBtn.addEventListener("click", () => {
-  document.querySelector('.small-modal-bg').classList.remove("d-none");
-  document.querySelector('.small-modal-container').classList.remove("d-none");
-
+  document.querySelector(".small-modal-bg").classList.remove("d-none");
+  document.querySelector(".small-modal-container").classList.remove("d-none");
 });
 
-saveSection.addEventListener('click', () => {
-  document.querySelector('.small-modal-bg').classList.add("d-none");
-  document.querySelector('.small-modal-container').classList.add("d-none");
+saveSection.addEventListener("click", () => {
+  document.querySelector(".small-modal-bg").classList.add("d-none");
+  document.querySelector(".small-modal-container").classList.add("d-none");
 
   createSection(sectionTitle.value);
   clearInput();
-})
+});
 
 section.addEventListener("click", (e) => {
   if (e.target.classList.contains("sectoinClick")) {
@@ -64,16 +64,16 @@ function addEventCall() {
 closeBtn.addEventListener("click", () => {
   modalBack.classList.add("d-none");
   modalContainer.classList.add("d-none");
-})
+});
 
 closeSmallBtn.addEventListener("click", () => {
-  document.querySelector('.small-modal-bg').classList.add("d-none");
-  document.querySelector('.small-modal-container').classList.add("d-none");
-})
+  document.querySelector(".small-modal-bg").classList.add("d-none");
+  document.querySelector(".small-modal-container").classList.add("d-none");
+});
 
 saveBtn.addEventListener("click", () => {
-  let group = addGroup();
-  let date = createDate();
+  const group = addGroup();
+  const date = createDate();
   addTask(title.value, group, selected.value, date);
   modalBack.classList.add("d-none");
   modalContainer.classList.add("d-none");

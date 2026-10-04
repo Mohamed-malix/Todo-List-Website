@@ -153,7 +153,6 @@ h4 {
   margin: auto;
 }
 
-
 /* the modal */
 
 .modal-background,
@@ -171,7 +170,7 @@ h4 {
   z-index: 2;
 }
 
-.modal-container, 
+.modal-container,
 .small-modal-container {
   background-color: #333;
   padding: 20px 30px;
@@ -196,8 +195,8 @@ label {
   color: #fff;
 }
 
- input,
- textarea {
+input,
+textarea {
   width: 90%;
   margin-left: auto;
   border: none;
@@ -218,23 +217,22 @@ label {
   border: none;
 }
 
-
 .span-dot {
   display: inline-block;
-  width:12px;
-  height:12px;
+  width: 12px;
+  height: 12px;
 
   border-radius: 50%;
-  background:#ccc;
+  background: #ccc;
 }
 
 .secContainer {
   display: flex;
   align-items: center;
-  gap:3px;
+  gap: 3px;
 
-  width:85%; 
-  margin:auto;
+  width: 85%;
+  margin: auto;
 }
 
 .secContainer:hover {
