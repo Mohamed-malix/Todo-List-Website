@@ -1,4 +1,3 @@
-
 import path from "node:path";
 import autoprefixer from "autoprefixer";
 import HtmlWebpackPlugin from "html-webpack-plugin";
@@ -22,27 +21,25 @@ export default {
     rules: [
       {
         test: /\.css$/i,
-        use:  [
+        use: [
           {
             // Adds CSS to the DOM by injecting a `<style>` tag
-            loader: 'style-loader'
+            loader: "style-loader",
           },
           {
             // Interprets `@import` and `url()` like `import/require()` and will resolve them
-            loader: 'css-loader'
+            loader: "css-loader",
           },
           {
             // Loader for webpack to process CSS with PostCSS
-            loader: 'postcss-loader',
+            loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: [
-                  autoprefixer
-                ]
-              }
-            }
+                plugins: [autoprefixer],
+              },
+            },
           },
-        ]
+        ],
       },
       {
         test: /\.html$/i,
@@ -52,7 +49,6 @@ export default {
         test: /\.(png|svg|jpg|jpeg|woff|woff2|ttf|eot)$/i,
         type: "asset/resource",
       },
- 
     ],
   },
 };
