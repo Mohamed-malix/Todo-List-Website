@@ -10,13 +10,13 @@ export function addGroup() {
   return tasksGroup;
 }
 
-export function addTask(task, group, priority, date) {
+export function addTask(task, group) {
   const tasks = createPa("div", "tasks", group);
   const checkbox = createPa("input", "check", tasks);
   checkbox.setAttribute("type", "checkbox");
-  createEl("li", "text", task, tasks);
-  createEl("span", "text", priority, tasks);
-  createEl("span", "date", date, tasks);
+  createEl("li", "text", task.name, tasks);
+  createEl("span", "text", task.priority, tasks);
+  createEl("span", "date", task.date, tasks);
   createPa("hr", "hr", group);
 
   return tasks;
