@@ -37,7 +37,8 @@
     "@fortawesome/fontawesome-free": "^7.3.1",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.8",
-    "date-fns": "^4.4.0"
+    "date-fns": "^4.4.0",
+    "globals": "^17.13.0"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"

@@ -1,5 +1,5 @@
 export function createPa(element, classNa, parent) {
-  let elementNa = document.createElement(`${element}`);
+  const elementNa = document.createElement(`${element}`);
   elementNa.classList.add(`${classNa}`);
   parent.appendChild(elementNa);
 
@@ -7,7 +7,7 @@ export function createPa(element, classNa, parent) {
 }
 
 export function createEl(element, classNa, text, parent) {
-  let elementNa = document.createElement(`${element}`);
+  const elementNa = document.createElement(`${element}`);
   elementNa.classList.add(`${classNa}`);
   elementNa.textContent = `${text}`;
   parent.appendChild(elementNa);
@@ -16,7 +16,7 @@ export function createEl(element, classNa, text, parent) {
 }
 
 export function createBe(element, classNa, parent, brother) {
-  let elementNa = document.createElement(`${element}`);
+  const elementNa = document.createElement(`${element}`);
   elementNa.classList.add(`${classNa}`);
   parent.insertBefore(elementNa, brother);
 

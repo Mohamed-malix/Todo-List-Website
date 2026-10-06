@@ -1,6 +1,6 @@
 import { createEl, createPa } from "./index.js";
 
-let sectionsContainer = document.querySelector(".section");
+const sectionsContainer = document.querySelector(".section");
 export default function createSection(name) {
   const secContainer = createPa("div", "secContainer", sectionsContainer);
   createPa("span", "span-dot", secContainer);

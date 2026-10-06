@@ -43,18 +43,39 @@ saveSection.addEventListener("click", () => {
   document.querySelector(".small-modal-container").classList.add("d-none");
 
   createSection(sectionTitle.value);
+  sections.push({ name: sectionTitle.value, tasks: [] });
   clearInput();
 });
 
 section.addEventListener("click", (e) => {
   if (e.target.classList.contains("sectoinClick")) {
-    const sectoinClick = document.querySelectorAll(".sectoinClick");
-    addEventCall();
+    const group = createPa("div", "group", document.querySelector(".content"));
+    const sectionBtns = document.querySelectorAll(".sectoinClick");
+    sections.forEach((item) => {
+      if (item.name == e.target.textContent) {
+        addEventCall(item.tasks);
+      }
+    });
   }
 });
 
-function addEventCall() {
+function addEventCall(tasks) {
   const addTaskBtn = createSectioneDefault();
+  const group = addGroup();
+
+  saveBtn.addEventListener("click", () => {
+    const date = createDate();
+    addTask(title.value, group, selected.value, date);
+    const task = {
+      date,
+      name: title.value,
+      priority: selected.value,
+    };
+    (tasks.push(task), modalBack.classList.add("d-none"));
+    modalContainer.classList.add("d-none");
+    clearInput();
+  });
+
   addTaskBtn.addEventListener("click", () => {
     modalBack.classList.remove("d-none");
     modalContainer.classList.remove("d-none");
@@ -69,16 +90,6 @@ closeBtn.addEventListener("click", () => {
 closeSmallBtn.addEventListener("click", () => {
   document.querySelector(".small-modal-bg").classList.add("d-none");
   document.querySelector(".small-modal-container").classList.add("d-none");
-});
-
-saveBtn.addEventListener("click", () => {
-  const group = addGroup();
-  const date = createDate();
-  addTask(title.value, group, selected.value, date);
-  modalBack.classList.add("d-none");
-  modalContainer.classList.add("d-none");
-
-  clearInput();
 });
 
 function createDate() {
