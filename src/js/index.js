@@ -56,8 +56,6 @@ section.addEventListener("click", (e) => {
     const group = createPa("div", "group", document.querySelector(".content"));
     const sectionBtns = document.querySelectorAll(".sectoinClick");
     sections.forEach((item) => {
-      // console.log(item.name);
-      // console.log(e.target.textContent);
       if (item.name == e.target.textContent) {
         addEventCall(item.tasks);
         console.log(sections);
