@@ -40,7 +40,6 @@ if (localStorage.getItem("sections") === "undefined") {
   ];
 } else {
   sections = JSON.parse(localStorage.getItem("sections"));
-  console.log(sections);
 }
 
 createBtn.addEventListener("click", () => {
@@ -86,15 +85,16 @@ section.addEventListener("click", (e) => {
       if (item.name == e.target.textContent) {
         // console.log(e.target.textContent);
         foundTask = item.tasks;
-        addEventCall();
+        addEventCall(item);
       }
     });
   }
 });
 
-function addEventCall() {
+function addEventCall(item) {
   const addTaskBtn = createSectioneDefault();
   group = addGroup();
+  displayTask(item);
   addTaskBtn.addEventListener("click", () => {
     modalBack.classList.remove("d-none");
     modalContainer.classList.remove("d-none");
@@ -122,4 +122,22 @@ function clearInput() {
   title.value = "";
   selected.value = "";
   textArea.value = "";
+}
+
+function displayTask(item) {
+  console.log(item);
+  let tasks = "";
+  for (let i = 0; item.tasks.length > i; i++) {
+    tasks += `
+       <div class="tasks">
+        <input class="check" type="checkbox">
+        <li class="text">${item.tasks[i].name}</li>
+        <span class="text">${item.tasks[i].priority}</span>
+        <span class="date">${item.tasks[i].date}</span>
+       </div>
+       <hr class="hr">
+    `;
+  }
+  console.log(tasks);
+  group.innerHTML = tasks;
 }
