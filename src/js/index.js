@@ -30,14 +30,15 @@ const selected = document.querySelector("#select");
 const section = document.querySelector(".section");
 const sectionTitle = document.querySelector("#section-title");
 
-let sections = [
-  { name: "Work", tasks: [] },
-  { name: "Study", tasks: [] },
-  { name: "Personal", tasks: [] },
-];
+let sections;
 window.addEventListener("load", defaultHome());
-if (JSON.parse(localStorage.getItem("sections")).length > 0) {
-  console.log(JSON.parse(localStorage.getItem("sections")));
+if (localStorage.getItem("sections") === "undefined") {
+  sections = [
+    { name: "Work", tasks: [] },
+    { name: "Study", tasks: [] },
+    { name: "Personal", tasks: [] },
+  ];
+} else {
   sections = JSON.parse(localStorage.getItem("sections"));
   console.log(sections);
 }
@@ -53,6 +54,7 @@ saveSection.addEventListener("click", () => {
 
   createSection(sectionTitle.value);
   sections.push({ name: sectionTitle.value, tasks: [] });
+  localStorage.setItem("sections", JSON.stringify(sections));
   clearInput();
 });
 
@@ -66,10 +68,12 @@ saveBtn.addEventListener("click", () => {
     priority: selected.value,
     checked: false,
   };
+
   addTask(task, group);
   foundTask.push(task);
   modalBack.classList.add("d-none");
   modalContainer.classList.add("d-none");
+  localStorage.setItem("sections", JSON.stringify(sections));
   clearInput();
 });
 
@@ -77,12 +81,12 @@ section.addEventListener("click", (e) => {
   if (e.target.classList.contains("sectoinClick")) {
     createPa("div", "group", document.querySelector(".content"));
     const sectionBtns = document.querySelectorAll(".sectoinClick");
+    console.log(sections);
     sections.forEach((item) => {
       if (item.name == e.target.textContent) {
         // console.log(e.target.textContent);
         foundTask = item.tasks;
         addEventCall();
-        console.log(sections);
       }
     });
   }
@@ -96,7 +100,6 @@ function addEventCall() {
     modalContainer.classList.remove("d-none");
   });
 }
-localStorage.setItem("sections", JSON.stringify(sections));
 
 closeBtn.addEventListener("click", () => {
   modalBack.classList.add("d-none");
