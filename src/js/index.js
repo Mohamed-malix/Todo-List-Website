@@ -32,7 +32,10 @@ const sectionTitle = document.querySelector("#section-title");
 
 let sections;
 window.addEventListener("load", defaultHome());
-if (localStorage.getItem("sections") === "undefined") {
+if (
+  localStorage.getItem("sections") === "undefined" ||
+  localStorage.getItem("sections") === null
+) {
   sections = [
     { name: "Work", tasks: [] },
     { name: "Study", tasks: [] },
@@ -41,6 +44,7 @@ if (localStorage.getItem("sections") === "undefined") {
 } else {
   sections = JSON.parse(localStorage.getItem("sections"));
 }
+displaySection();
 
 createBtn.addEventListener("click", () => {
   document.querySelector(".small-modal-bg").classList.remove("d-none");
@@ -137,6 +141,18 @@ function displayTask(item) {
        <hr class="hr">
     `;
   }
-  console.log(tasks);
   group.innerHTML = tasks;
+}
+
+function displaySection() {
+  let sectionAdd = "";
+  for (let i = 3; sections.length > i; i++) {
+    sectionAdd += `
+    <div class="secContainer">
+     <span class="span-dot"></span>
+     <button class="sectoinClick" type="button">${sections[i].name}</button>
+    </div>
+    `;
+  }
+  section.innerHTML += sectionAdd;
 }
