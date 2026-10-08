@@ -30,13 +30,18 @@ const selected = document.querySelector("#select");
 const section = document.querySelector(".section");
 const sectionTitle = document.querySelector("#section-title");
 
-window.addEventListener("load", defaultHome());
-
-const sections = [
+let sections = [
   { name: "Work", tasks: [] },
   { name: "Study", tasks: [] },
   { name: "Personal", tasks: [] },
 ];
+window.addEventListener("load", defaultHome());
+if (JSON.parse(localStorage.getItem("sections")).length > 0) {
+  console.log(JSON.parse(localStorage.getItem("sections")));
+  sections = JSON.parse(localStorage.getItem("sections"));
+  console.log(sections);
+}
+
 createBtn.addEventListener("click", () => {
   document.querySelector(".small-modal-bg").classList.remove("d-none");
   document.querySelector(".small-modal-container").classList.remove("d-none");
@@ -51,43 +56,47 @@ saveSection.addEventListener("click", () => {
   clearInput();
 });
 
+let group;
+let foundTask;
+saveBtn.addEventListener("click", () => {
+  const date = createDate();
+  const task = {
+    date,
+    name: title.value,
+    priority: selected.value,
+    checked: false,
+  };
+  addTask(task, group);
+  foundTask.push(task);
+  modalBack.classList.add("d-none");
+  modalContainer.classList.add("d-none");
+  clearInput();
+});
+
 section.addEventListener("click", (e) => {
   if (e.target.classList.contains("sectoinClick")) {
-    const group = createPa("div", "group", document.querySelector(".content"));
+    createPa("div", "group", document.querySelector(".content"));
     const sectionBtns = document.querySelectorAll(".sectoinClick");
     sections.forEach((item) => {
       if (item.name == e.target.textContent) {
-        addEventCall(item.tasks);
+        // console.log(e.target.textContent);
+        foundTask = item.tasks;
+        addEventCall();
         console.log(sections);
       }
     });
   }
 });
 
-function addEventCall(tasks) {
+function addEventCall() {
   const addTaskBtn = createSectioneDefault();
-  const group = addGroup();
-
-  saveBtn.addEventListener("click", () => {
-    const date = createDate();
-    const task = {
-      date,
-      name: title.value,
-      priority: selected.value,
-      checked: false,
-    };
-    addTask(task, group);
-    tasks.push(task);
-    modalBack.classList.add("d-none");
-    modalContainer.classList.add("d-none");
-    clearInput();
-  });
-
+  group = addGroup();
   addTaskBtn.addEventListener("click", () => {
     modalBack.classList.remove("d-none");
     modalContainer.classList.remove("d-none");
   });
 }
+localStorage.setItem("sections", JSON.stringify(sections));
 
 closeBtn.addEventListener("click", () => {
   modalBack.classList.add("d-none");
