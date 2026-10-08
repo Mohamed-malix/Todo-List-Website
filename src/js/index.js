@@ -137,5 +137,6 @@ function displayTask(item) {
        <hr class="hr">
     `;
   }
+  console.log(tasks);
   group.innerHTML = tasks;
 }
