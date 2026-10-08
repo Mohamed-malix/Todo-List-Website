@@ -125,7 +125,6 @@ function clearInput() {
 }
 
 function displayTask(item) {
-  console.log(item);
   let tasks = "";
   for (let i = 0; item.tasks.length > i; i++) {
     tasks += `
