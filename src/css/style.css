@@ -70,7 +70,12 @@ li {
   padding-left: 1.1rem;
 }
 
-.sectoinClick:hover {
+.sectionBtnDiv i {
+  padding-left: 1em;
+}
+
+.sectionBtnDiv:hover {
+  width: 100%;
   cursor: pointer;
   background-color: #333;
 }
@@ -227,7 +232,7 @@ textarea {
   align-items: center;
   gap: 3px;
 
-  width: 85%;
+  width: 100%;
   margin: auto;
 }
 
