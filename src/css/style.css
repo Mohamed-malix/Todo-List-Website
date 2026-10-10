@@ -80,6 +80,22 @@ li {
   background-color: #333;
 }
 
+.image-div {
+  max-width: 40%;
+}
+
+.image-div img {
+  width: 100%;
+  height: auto;
+}
+
+.btn-log {
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+
 /* adding tasks */
 
 .tasks {
@@ -100,6 +116,10 @@ li {
   width: 1.1rem;
   height: 1.1rem;
   margin-left: 2px;
+}
+
+.check:hover {
+  cursor: pointer;
 }
 
 /* utilities */
