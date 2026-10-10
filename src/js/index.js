@@ -12,7 +12,17 @@ import {
 } from "./createDefault.js";
 import { addTask, addGroup } from "./addTask.js";
 import createSection from "./createSection.js";
-export { createEl, createPa, addTask, createBe, format, content };
+import { displayTask, displaySection, deleteBtns } from "./display.js";
+export {
+  createEl,
+  createPa,
+  addTask,
+  createBe,
+  format,
+  content,
+  group,
+  sections,
+};
 
 // eslint-disable-next-line no-console -- I like this test, I will keep it (:
 console.log("App is running");
@@ -84,10 +94,9 @@ section.addEventListener("click", (e) => {
   if (e.target.classList.contains("sectoinClick")) {
     createPa("div", "group", document.querySelector(".content"));
     const sectionBtns = document.querySelectorAll(".sectoinClick");
-    console.log(sections);
+    // console.log(sections);
     sections.forEach((item) => {
       if (item.name == e.target.textContent) {
-        // console.log(e.target.textContent);
         foundTask = item.tasks;
         addEventCall(item);
       }
@@ -126,33 +135,4 @@ function clearInput() {
   title.value = "";
   selected.value = "";
   textArea.value = "";
-}
-
-function displayTask(item) {
-  let tasks = "";
-  for (let i = 0; item.tasks.length > i; i++) {
-    tasks += `
-       <div class="tasks">
-        <input class="check" type="checkbox">
-        <li class="text">${item.tasks[i].name}</li>
-        <span class="text">${item.tasks[i].priority}</span>
-        <span class="date">${item.tasks[i].date}</span>
-       </div>
-       <hr class="hr">
-    `;
-  }
-  group.innerHTML = tasks;
-}
-
-function displaySection() {
-  let sectionAdd = "";
-  for (let i = 3; sections.length > i; i++) {
-    sectionAdd += `
-    <div class="secContainer">
-     <span class="span-dot"></span>
-     <button class="sectoinClick" type="button">${sections[i].name}</button>
-    </div>
-    `;
-  }
-  section.innerHTML += sectionAdd;
 }

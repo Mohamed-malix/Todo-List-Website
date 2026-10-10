@@ -80,6 +80,10 @@ li {
   background-color: #333;
 }
 
+/* .sectionBtnDiv:hover .delete-btn{
+  display: inline-block;
+} */
+
 .image-div {
   max-width: 40%;
 }
@@ -94,6 +98,13 @@ li {
   background-color: transparent;
   border-bottom: 2px solid #fff;
   color: #fff;
+}
+
+.delete-btn {
+  border: none;
+  color: #ccc;
+  background-color: transparent;
+  font-size: 1.1em;
 }
 
 /* adding tasks */
