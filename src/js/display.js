@@ -5,16 +5,33 @@ export function displayTask(item) {
   let tasks = "";
   for (let i = 0; item.tasks.length > i; i++) {
     tasks += `
-       <div class="tasks">
+     <div class="tasks-container">
+        <div class="tasks">
         <input class="check" type="checkbox">
         <li class="text">${item.tasks[i].name}</li>
         <span class="text">${item.tasks[i].priority}</span>
         <span class="date">${item.tasks[i].date}</span>
-       </div>
-       <hr class="hr">
+        <button class="delete-task">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        </div>
+        <hr class="hr">
+      </div>
     `;
   }
   group.innerHTML = tasks;
+
+  const deleteTasks = document.querySelectorAll(".delete-task");
+  deleteTasks.forEach((btn, j) => {
+    btn.addEventListener("click", (e) => {
+      const index = sections.indexOf(item);
+      console.log(item.tasks[j], index);
+
+      item.tasks.splice(j, 1);
+      localStorage.setItem("sections", JSON.stringify(sections));
+      e.target.closest(".tasks-container").remove();
+    });
+  });
 }
 
 export let deleteBtns;
@@ -41,6 +58,8 @@ export function displaySection() {
       const index = sections.indexOf(sectionObject);
 
       e.target.closest(".secContainer").remove();
+      sections.splice(index, 1);
+      localStorage.setItem("sections", JSON.stringify(sections));
     });
   });
 }
