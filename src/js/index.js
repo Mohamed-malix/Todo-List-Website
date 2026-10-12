@@ -12,7 +12,7 @@ import {
 } from "./createDefault.js";
 import { addTask, addGroup } from "./addTask.js";
 import createSection from "./createSection.js";
-import { displayTask, displaySection, deleteBtns } from "./display.js";
+import { displayTask, displaySection } from "./display.js";
 export {
   createEl,
   createPa,
@@ -93,8 +93,6 @@ saveBtn.addEventListener("click", () => {
 section.addEventListener("click", (e) => {
   if (e.target.classList.contains("sectoinClick")) {
     createPa("div", "group", document.querySelector(".content"));
-    const sectionBtns = document.querySelectorAll(".sectoinClick");
-    // console.log(sections);
     sections.forEach((item) => {
       if (item.name == e.target.textContent) {
         foundTask = item.tasks;

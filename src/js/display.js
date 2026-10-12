@@ -24,9 +24,6 @@ export function displayTask(item) {
   const deleteTasks = document.querySelectorAll(".delete-task");
   deleteTasks.forEach((btn, j) => {
     btn.addEventListener("click", (e) => {
-      const index = sections.indexOf(item);
-      console.log(item.tasks[j], index);
-
       item.tasks.splice(j, 1);
       localStorage.setItem("sections", JSON.stringify(sections));
       e.target.closest(".tasks-container").remove();

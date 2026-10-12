@@ -100,7 +100,8 @@ li {
   color: #fff;
 }
 
-.delete-btn {
+.delete-btn,
+.delete-task {
   border: none;
   color: #ccc;
   background-color: transparent;
