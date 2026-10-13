@@ -2,8 +2,10 @@ import { createEl, createPa } from "./index.js";
 
 const sectionsContainer = document.querySelector(".section");
 export default function createSection(name) {
-  const secContainer = createPa("div", "secContainer", sectionsContainer);
-  createPa("span", "span-dot", secContainer);
-  const newSection = createEl("button", "sectoinClick", name, secContainer);
-  newSection.setAttribute("type", "button");
+    const secContainer = createPa("div", "secContainer", sectionsContainer);
+    const sidesectionBtn = createPa("div", "sidesectionBtn", secContainer);
+    createPa("div", "sidesectionDelete", secContainer);
+    createPa("span", "span-dot", sidesectionBtn);
+    const newSection = createEl("button", "sectoinClick", name, sidesectionBtn);
+    newSection.setAttribute("type", "button");
 }

@@ -1,31 +1,30 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap";
-import "../css/style.css";
-import "./createDefault.js";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { format } from "date-fns";
-import { createEl, createPa, createBe } from "./createEl.js";
-import {
-  createSectioneDefault,
-  content,
-  defaultHome,
-} from "./createDefault.js";
-import { addTask, addGroup } from "./addTask.js";
-import createSection from "./createSection.js";
-import { displayTask, displaySection } from "./display.js";
-export {
-  createEl,
-  createPa,
-  addTask,
-  createBe,
-  format,
-  content,
-  group,
-  sections,
-};
 
-// eslint-disable-next-line no-console -- I like this test, I will keep it (:
-console.log("App is running");
+import "../css/style.css";
+import { addGroup, addTask } from "./addTask.js";
+import "./createDefault.js";
+import {
+    content,
+    createSectioneDefault,
+    defaultHome,
+} from "./createDefault.js";
+import { createBe, createEl, createPa } from "./createEl.js";
+import createSection from "./createSection.js";
+import { displaySection, displayTask } from "./display.js";
+
+export {
+    createEl,
+    createPa,
+    addTask,
+    createBe,
+    format,
+    content,
+    group,
+    sections,
+};
 
 const closeBtn = document.querySelector(".closeBtn");
 const closeSmallBtn = document.querySelector(".close-sm-modal");
@@ -43,94 +42,94 @@ const sectionTitle = document.querySelector("#section-title");
 let sections;
 window.addEventListener("load", defaultHome());
 if (
-  localStorage.getItem("sections") === "undefined" ||
-  localStorage.getItem("sections") === null
+    localStorage.getItem("sections") === "undefined" ||
+    localStorage.getItem("sections") === null
 ) {
-  sections = [
-    { name: "Work", tasks: [] },
-    { name: "Study", tasks: [] },
-    { name: "Personal", tasks: [] },
-  ];
+    sections = [
+        { name: "Work", tasks: [] },
+        { name: "Study", tasks: [] },
+        { name: "Personal", tasks: [] },
+    ];
 } else {
-  sections = JSON.parse(localStorage.getItem("sections"));
+    sections = JSON.parse(localStorage.getItem("sections"));
 }
 displaySection();
 
 createBtn.addEventListener("click", () => {
-  document.querySelector(".small-modal-bg").classList.remove("d-none");
-  document.querySelector(".small-modal-container").classList.remove("d-none");
+    document.querySelector(".small-modal-bg").classList.remove("d-none");
+    document.querySelector(".small-modal-container").classList.remove("d-none");
 });
 
 saveSection.addEventListener("click", () => {
-  document.querySelector(".small-modal-bg").classList.add("d-none");
-  document.querySelector(".small-modal-container").classList.add("d-none");
+    document.querySelector(".small-modal-bg").classList.add("d-none");
+    document.querySelector(".small-modal-container").classList.add("d-none");
 
-  createSection(sectionTitle.value);
-  sections.push({ name: sectionTitle.value, tasks: [] });
-  localStorage.setItem("sections", JSON.stringify(sections));
-  clearInput();
+    createSection(sectionTitle.value);
+    sections.push({ name: sectionTitle.value, tasks: [] });
+    localStorage.setItem("sections", JSON.stringify(sections));
+    clearInput();
 });
 
 let group;
 let foundTask;
 saveBtn.addEventListener("click", () => {
-  const date = createDate();
-  const task = {
-    date,
-    name: title.value,
-    priority: selected.value,
-    checked: false,
-  };
+    const date = createDate();
+    const task = {
+        date,
+        name: title.value,
+        priority: selected.value,
+        checked: false,
+    };
 
-  addTask(task, group);
-  foundTask.push(task);
-  modalBack.classList.add("d-none");
-  modalContainer.classList.add("d-none");
-  localStorage.setItem("sections", JSON.stringify(sections));
-  clearInput();
+    addTask(task, group);
+    foundTask.push(task);
+    modalBack.classList.add("d-none");
+    modalContainer.classList.add("d-none");
+    localStorage.setItem("sections", JSON.stringify(sections));
+    clearInput();
 });
 
 section.addEventListener("click", (e) => {
-  if (e.target.classList.contains("sectoinClick")) {
-    createPa("div", "group", document.querySelector(".content"));
-    sections.forEach((item) => {
-      if (item.name == e.target.textContent) {
-        foundTask = item.tasks;
-        addEventCall(item);
-      }
-    });
-  }
+    if (e.target.classList.contains("sectoinClick")) {
+        createPa("div", "group", document.querySelector(".content"));
+        sections.forEach((item) => {
+            if (item.name == e.target.textContent) {
+                foundTask = item.tasks;
+                addEventCall(item);
+            }
+        });
+    }
 });
 
 function addEventCall(item) {
-  const addTaskBtn = createSectioneDefault();
-  group = addGroup();
-  displayTask(item);
-  addTaskBtn.addEventListener("click", () => {
-    modalBack.classList.remove("d-none");
-    modalContainer.classList.remove("d-none");
-  });
+    const addTaskBtn = createSectioneDefault();
+    group = addGroup();
+    displayTask(item);
+    addTaskBtn.addEventListener("click", () => {
+        modalBack.classList.remove("d-none");
+        modalContainer.classList.remove("d-none");
+    });
 }
 
 closeBtn.addEventListener("click", () => {
-  modalBack.classList.add("d-none");
-  modalContainer.classList.add("d-none");
+    modalBack.classList.add("d-none");
+    modalContainer.classList.add("d-none");
 });
 
 closeSmallBtn.addEventListener("click", () => {
-  document.querySelector(".small-modal-bg").classList.add("d-none");
-  document.querySelector(".small-modal-container").classList.add("d-none");
+    document.querySelector(".small-modal-bg").classList.add("d-none");
+    document.querySelector(".small-modal-container").classList.add("d-none");
 });
 
 function createDate() {
-  const today = new Date();
-  const date = format(today, "MM-dd");
+    const today = new Date();
+    const date = format(today, "MM-dd");
 
-  return date;
+    return date;
 }
 
 function clearInput() {
-  title.value = "";
-  selected.value = "";
-  textArea.value = "";
+    title.value = "";
+    selected.value = "";
+    textArea.value = "";
 }
