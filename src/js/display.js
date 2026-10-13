@@ -8,11 +8,11 @@ export function displayTask(item) {
      <div class="tasks-container">
         
         <div class="tasks">
-         <div class="task-right d-flex gap-1 align-items-center">
+         <div class="task-right">
            <input class="check" type="checkbox">
            <li class="text ms-2">${item.tasks[i].name}</li>
          </div>
-         <div class="task-left d-flex gap-3 align-items-center">
+         <div class="task-left">
           <span class="text">${item.tasks[i].priority}</span> 
           <span class="date">${item.tasks[i].date}</span>
           <button class="delete-task">

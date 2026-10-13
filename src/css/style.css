@@ -120,6 +120,18 @@ li {
     border-radius: 12px;
 }
 
+.task-right {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.task-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .tasks span.text {
     color: goldenrod;
 }
